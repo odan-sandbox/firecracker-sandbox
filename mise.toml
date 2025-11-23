@@ -1,0 +1,3 @@
+[tools]
+"aqua:firecracker-microvm/firecracker" = "latest"
+node = "latest"

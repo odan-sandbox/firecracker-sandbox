@@ -1,0 +1,15 @@
+packages:
+  - packages/*
+
+catalog:
+  '@types/node': ^24.10.1
+  hono: ^4.10.6
+  oxfmt: ^0.14.0
+  typescript: ^5.9.3
+
+minimumReleaseAge: 1440
+
+trustPolicy: no-downgrade
+
+trustPolicyExclude:
+  - undici

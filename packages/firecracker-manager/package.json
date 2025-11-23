@@ -1,0 +1,25 @@
+{
+  "private": true,
+  "name": "firecracker-manager",
+  "type": "module",
+  "scripts": {
+    "prebuild": "pnpm run prebuild:swagger && pnpm run prebuild:openapi-typescript",
+    "prebuild:swagger": "wget -N https://raw.githubusercontent.com/firecracker-microvm/firecracker/refs/tags/v1.13.1/src/firecracker/swagger/firecracker.yaml",
+    "prebuild:openapi-typescript": "openapi-typescript ./firecracker.yaml -o src/firecracker.ts",
+    "dev": "node --watch src/index.ts"
+  },
+  "devDependencies": {
+    "@types/node": "catalog:",
+    "hono": "catalog:",
+    "openapi-typescript": "^5.4.2",
+    "oxfmt": "catalog:",
+    "typescript": "catalog:"
+  },
+  "dependencies": {
+    "@hono/node-server": "^1.19.6"
+  },
+  "exports": {
+    ".": "./src/index.ts",
+    "./client": "./src/client.ts"
+  }
+}
