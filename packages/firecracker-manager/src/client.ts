@@ -4,11 +4,11 @@ import { hc } from "hono/client";
 import type { RpcType } from "./rpc.ts";
 import { SOCKET_PATH } from "./config.ts";
 
-export const createClient = ({
-  socketPath = SOCKET_PATH,
-}: {
-  socketPath?: string;
-}) => {
+/**
+ * @deprecated
+ */
+export const createClient = (options?: { socketPath?: string }) => {
+  const socketPath = options?.socketPath ?? SOCKET_PATH;
   const client = hc<RpcType>("http://localhost/", {
     init: {
       // @ts-expect-error

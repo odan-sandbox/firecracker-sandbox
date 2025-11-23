@@ -1,0 +1,13 @@
+{
+  "private": true,
+  "name": "os-command-injection",
+  "type": "module",
+  "devDependencies": {
+    "typescript": "catalog:"
+  },
+  "dependencies": {
+    "firecracker-client": "workspace:^",
+    "firecracker-manager": "workspace:^",
+    "runner-agents": "workspace:^"
+  }
+}

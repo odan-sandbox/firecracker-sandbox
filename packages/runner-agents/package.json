@@ -1,0 +1,22 @@
+{
+  "private": true,
+  "name": "runner-agents",
+  "type": "module",
+  "devDependencies": {
+    "@types/node": "catalog:",
+    "hono": "catalog:",
+    "rolldown": "1.0.0-beta.51",
+    "typescript": "catalog:"
+  },
+  "dependencies": {
+    "@hono/node-server": "catalog:",
+    "@hono/zod-validator": "catalog:",
+    "zod": "catalog:"
+  },
+  "scripts": {
+    "build": "rolldown -c"
+  },
+  "exports": {
+    "./client": "./src/client.ts"
+  }
+}

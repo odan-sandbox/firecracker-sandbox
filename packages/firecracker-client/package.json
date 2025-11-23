@@ -1,0 +1,9 @@
+{
+  "private": true,
+  "name": "firecracker-client",
+  "type": "module",
+  "main": "./src/index.ts",
+  "devDependencies": {
+    "@types/node": "catalog:"
+  }
+}

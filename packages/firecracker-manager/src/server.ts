@@ -18,5 +18,6 @@ if (fs.existsSync(SOCKET_PATH)) {
 const server = createAdaptorServer(app);
 
 server.listen(SOCKET_PATH, () => {
+  fs.chmodSync(SOCKET_PATH, 0o666);
   console.log(`firecracker-manager listening on ${SOCKET_PATH}`);
 });
