@@ -58,7 +58,7 @@ flowchart LR
         FR["Firecracker binary\n(spawns VM on host)"]
     end
     subgraph Guest MicroVM
-        RAGuest["runner-agents Bun binary\n(RPC server inside VM)"]
+        RAGuest["runner-agents\n(RPC server inside VM)"]
     end
 
     OCI -->|"vm.start RPC\n(Unix socket)"| FKM
