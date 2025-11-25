@@ -22,7 +22,8 @@ $ bash ./examples/post-run.sh nodejs ./examples/example.js # Terminal 2
 {"stdout":"Hello World! from Node.js\n55\n","stderr":""}
 ```
 
-Terminal 1 launches every package that exposes a `start` script (notably `packages/firecracker-manager` over a Unix socket and `packages/os-command-injection` on `http://localhost:3000`).
+Terminal 1 launches every package that exposes a `start` script (notably `packages/firecracker-manager` over a Unix socket and `packages/os-command-injection` on `http://localhost:3000`).  
+
 Terminal 2 calls the helper script, which `curl`s `/run` and streams stdout/stderr from the VM back to the CLI. Replace `nodejs ./examples/example.js` with `python ./examples/example.py` or any custom payload located in `examples/`.
 
 ### Run Other Samples
