@@ -69,6 +69,8 @@ app
       const instanceInfo = await firecrackerClient.describeInstance();
       console.log("instanceInfo", instanceInfo);
 
+      // XXX
+      // await setTimeout(3000);
       const runnerAgentsClient = await createRunnerAgentsClient({
         vsock: {
           socketPath: vmStart.vSocketPath,

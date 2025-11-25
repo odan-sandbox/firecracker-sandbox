@@ -4,6 +4,12 @@
   "type": "module",
   "main": "./src/index.ts",
   "devDependencies": {
-    "@types/node": "catalog:"
+    "@types/node": "catalog:",
+    "openapi-typescript": "^5.4.2"
+  },
+  "scripts": {
+    "setup": "pnpm run setup:swagger && pnpm run setup:openapi-typescript",
+    "setup:swagger": "wget -N https://raw.githubusercontent.com/firecracker-microvm/firecracker/refs/tags/v1.13.1/src/firecracker/swagger/firecracker.yaml",
+    "setup:openapi-typescript": "openapi-typescript ./firecracker.yaml -o ./src/swagger.ts"
   }
 }

@@ -1,4 +1,2 @@
-firecracker.yaml
-
 firecracker/**
 !firecracker/.gitkeep

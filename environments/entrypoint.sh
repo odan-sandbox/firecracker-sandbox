@@ -1,6 +1,6 @@
 #!/bin/sh
 
-exec > /var/log/entrypoint.log 2>&1
+# exec > /var/log/entrypoint.log 2>&1
 
 set -eux
 
@@ -10,10 +10,8 @@ echo "debug echo"
 ip link set lo up
 # ip addr add 127.0.0.1/8 dev lo
 
-command -v fnm >/dev/null 2>&1 && eval "$(fnm env --use-on-cd --shell bash)"
 # --- bundle.mjs 起動 ---
 node /app/bundle.mjs &
-# /app/agent
 AGENT_PID=$!
 
 # --- vsock → TCP ブリッジ起動 ---

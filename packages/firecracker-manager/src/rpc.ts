@@ -66,6 +66,8 @@ const routes = app
           "--enable-pci",
           "--log-path",
           logFilePath,
+          "--level",
+          "Debug",
         ],
         { resolveOn: "spawn" }
       );

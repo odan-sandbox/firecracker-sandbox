@@ -3,6 +3,7 @@
   "name": "os-command-injection",
   "type": "module",
   "devDependencies": {
+    "@types/node": "catalog:",
     "typescript": "catalog:"
   },
   "dependencies": {
@@ -10,7 +11,12 @@
     "@hono/zod-validator": "catalog:",
     "firecracker-client": "workspace:^",
     "firecracker-manager": "workspace:^",
+    "p-retry": "^7.1.0",
     "runner-agents": "workspace:^",
     "zod": "catalog:"
+  },
+  "scripts": {
+    "start": "node src/main.ts",
+    "dev": "node --watch src/main.ts"
   }
 }
