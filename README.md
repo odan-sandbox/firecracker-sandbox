@@ -14,6 +14,8 @@ $ pnpm run build:environments
 
 ## Usage
 
+> **Note:** Firecracker requires Linux with KVM enabled. Run these commands on a Linux host (WSL is supported) to boot the MicroVM.
+
 ```bash
 $ pnpm -r run --parallel start --if-present # Terminal 1
 
