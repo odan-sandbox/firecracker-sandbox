@@ -3,7 +3,7 @@ import { defineConfig } from "rolldown";
 export default defineConfig({
   input: "src/main.ts",
   output: {
-    file: "dist/bundle.js",
+    file: "dist/bundle.mjs",
     format: "esm",
   },
   platform: "node",

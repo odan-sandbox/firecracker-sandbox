@@ -2,13 +2,13 @@ packages:
   - packages/*
 
 catalog:
-  '@hono/node-server': ^1.19.6
-  '@hono/zod-validator': ^0.7.5
+  '@hono/node-server': 1.19.6
+  '@hono/zod-validator': 0.7.5
   '@types/node': 24.10.1
   hono: 4.10.6
   oxfmt: ^0.14.0
   typescript: 5.9.3
-  zod: ^4.1.12
+  zod: 4.1.12
 
 linkWorkspacePackages: true
 

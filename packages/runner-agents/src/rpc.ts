@@ -15,13 +15,13 @@ const routes = app
     zValidator(
       "json",
       z.object({
-        code: z.string(),
+        command: z.string(),
       })
     ),
     async (c) => {
-      const json = c.req.valid("json");
+      const { command } = c.req.valid("json");
 
-      const { stdout, stderr } = await exec(`node -e '${json.code}'`);
+      const { stdout, stderr } = await exec(command);
 
       return c.json({
         stdout,

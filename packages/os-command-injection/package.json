@@ -6,8 +6,11 @@
     "typescript": "catalog:"
   },
   "dependencies": {
+    "@hono/node-server": "catalog:",
+    "@hono/zod-validator": "catalog:",
     "firecracker-client": "workspace:^",
     "firecracker-manager": "workspace:^",
-    "runner-agents": "workspace:^"
+    "runner-agents": "workspace:^",
+    "zod": "catalog:"
   }
 }

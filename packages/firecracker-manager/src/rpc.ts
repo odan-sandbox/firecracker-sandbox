@@ -1,17 +1,15 @@
 import * as fs from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
-import { spawn } from "node:child_process";
 
 import * as z from "zod";
 import { zValidator } from "@hono/zod-validator";
 import { Hono } from "hono";
-import { setTimeout } from "node:timers/promises";
 import { createClient } from "firecracker-client";
+
 import { spawnAsync } from "./utils/spawn-async.ts";
 import { exposeSocket } from "./utils/expose-socket.ts";
 import { waitForFileCreation } from "./utils/wait-for-file-creation.ts";
-import { waitForSocket } from "./utils/wait-for-socket.ts";
 
 const app = new Hono();
 
@@ -87,6 +85,7 @@ const routes = app
         },
       });
 
+      // TODO: copy roofs
       await client.putGuestDriveByID({
         path: {
           drive_id: "rootfs",

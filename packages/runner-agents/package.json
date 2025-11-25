@@ -14,7 +14,9 @@
     "zod": "catalog:"
   },
   "scripts": {
-    "build": "rolldown -c"
+    "build": "pnpm run build:rolldown && pnpm run build:bun",
+    "build:rolldown": "rolldown -c",
+    "build:bun": "bun build ./src/main.ts --compile --target=bun-linux-x64 --outfile=agent"
   },
   "exports": {
     "./client": "./src/client.ts"

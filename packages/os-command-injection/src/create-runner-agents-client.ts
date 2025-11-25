@@ -12,18 +12,36 @@ async function handshake(vsockInfo: VsockInfo) {
       vsock.write(`CONNECT ${vsockInfo.port}\n`);
     });
     vsock.on("error", (error) => {
-      console.error(error);
+      console.error("handshake error", error);
       if (!done) {
+        done = true;
         reject(error);
       }
     });
     vsock.on("close", (hadError) => {
       console.log("vsock close", hadError);
+      if (!done) {
+        done = true;
+        reject(
+          new Error(`vsock closed before handshake. hadError=${hadError}`)
+        );
+      }
+    });
+    vsock.on("connect", () => {
+      console.log("vsock connected");
+    });
+    vsock.on("end", () => {
+      console.log("vsock end");
+      if (!done) {
+        done = true;
+        reject(new Error("vsock ended before handshake"));
+      }
     });
     vsock.on("data", (chunk) => {
       const line = chunk.toString();
 
       if (line.startsWith("OK ")) {
+        console.log("handshake done");
         done = true;
         resolve(vsock);
       }
